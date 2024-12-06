@@ -1,0 +1,20 @@
+@mixin display($display, $aligin, $justfly, $gap) {
+  display: $display;
+  align-items: $aligin;
+  justify-content: $justfly;
+  gap: $gap + px;
+}
+@mixin size($font_size, $font_weight, $line_hightn, $aligin) {
+  font-size: $font_size + px;
+  font-weight: $font_weight;
+  line-height: $line_hightn + px;
+  text-align: $aligin;
+}
+@mixin border($border, $border-radus) {
+  border: $border;
+  border-radius: $border-radus + px;
+}
+@mixin px($padding, $margin) {
+  padding: $padding;
+  margin: $margin;
+}

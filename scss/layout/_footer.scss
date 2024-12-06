@@ -1,0 +1,59 @@
+@use "../utils/varibles" as color;
+@use "../utils/mixins" as mxn;
+footer {
+  background-color: color.$bg_darkBlue;
+  @include mxn.px(96px 0 92px, 0);
+  .foter_twoDIv {
+    @include mxn.display(flex, center, space-between, 0);
+    .footer_one {
+      p {
+        @include mxn.size(16, 500, 28, left);
+        max-width: 399px;
+        color: #ffffff;
+        @include mxn.px(23px 0 86px, 0);
+      }
+    }
+    .footer_two {
+      h1 {
+        @include mxn.size(48, 600, 64, left);
+        color: color.$bg_white;
+      }
+      p {
+        @include mxn.size(16, 400, 28, left);
+        color: #f4f6fc;
+        max-width: 399px;
+      }
+      @media (max-width: 778px) {
+        & {
+          margin-bottom: 30px;
+        }
+      }
+    }
+    @media (max-width: 778px) {
+      & {
+        flex-direction: column;
+      }
+    }
+  }
+  .footerMin-div {
+    max-width: 517px;
+    background-color: color.$bg_yellow;
+    @include mxn.px(17px 137px 16px 37px, 0);
+    .p {
+      @include mxn.display(flex, center, space-between, 0);
+      @media (max-width: 520px) {
+        & {
+          flex-direction: column;
+        }
+      }
+    }
+    .span {
+      @include mxn.display(flex, center, space-between, 0);
+      @media (max-width: 520px) {
+        & {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

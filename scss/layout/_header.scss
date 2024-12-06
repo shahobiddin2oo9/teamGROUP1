@@ -1,0 +1,72 @@
+@use "../utils/varibles" as color;
+@use "../utils/mixins" as mxn;
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #1c1e53;
+  .navbar {
+    .navbar-toggler {
+      background-color: white;
+    }
+    .container-fluid {
+      padding: 32px 0;
+      .collapse {
+        .navbar-nav {
+          justify-content: space-between;
+          .nav-item {
+            .nav-link {
+              @include mxn.size(16, 500, 28, left);
+              color: #bbbbcb;
+              &:hover {
+                color: color.$bg_white;
+              }
+            }
+          }
+          button {
+            @include mxn.border(border 1px solid color.$bg_whiteYellow, 41);
+            background-color: color.$bg_darkBlue;
+            a {
+              @include mxn.px(16px 48px, 0);
+              @include mxn.size(16, 500, 28, left);
+              text-decoration: none;
+              color: color.$bg_white;
+            }
+            &:active {
+              box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset;
+            }
+            @media (max-width: 768px) {
+              & {
+                @include mxn.border(border 1px solid color.$bg_whiteYellow, 41);
+                background-color: color.$bg_darkBlue;
+                @include mxn.px(0, 8px 8px);
+                width: 60%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  img {
+    width: 70%;
+    object-fit: cover;
+  }
+}
+.loading-none {
+  opacity: 0;
+  z-index: -99999;
+}
